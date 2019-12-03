@@ -54,9 +54,19 @@ CSG Bolt4 = new Cylinder (2.75,2.75,60,(int)8).toCSG()
 				.movez(80)
 				.movey(-10)
 
-def stuff = [Cylinder,Right,Bolt1,Bolt2,Bolt3,Bolt4]
+CSG Pry1 = new Cube (13,4,20).toCSG()
+				.movex(-9)
+				.movey(20)
+				.movez(40)
+
+CSG Pry2 = new Cube (20,4,20).toCSG()
+				.movex(46)
+				.movey(20)
+				.movez(25)
+
+def stuff = [Cylinder,Right,Bolt1,Bolt2,Bolt3,Bolt4,Pry1,Pry2]
 CSG Palm = Cube.difference(stuff)
 CSG Back = Cube2.difference(stuff)
-				//.movey(50)
+				.movey(50)
 
 return [Palm,Back];
