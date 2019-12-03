@@ -66,7 +66,11 @@ CSG Pry2 = new Cube (20,4,20).toCSG()
 
 def stuff = [Cylinder,Right,Bolt1,Bolt2,Bolt3,Bolt4,Pry1,Pry2]
 CSG Palm = Cube.difference(stuff)
+				.rotx(-90)
+				.toZMin()
 CSG Back = Cube2.difference(stuff)
-				.movey(50)
+				.rotx(90)
+				.movey(40)
+				.toZMin()
 
 return [Palm,Back];
