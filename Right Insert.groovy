@@ -6,7 +6,6 @@ CSG Right  = Vitamins.get(Right_Hand)						//Get hand STL
 			.toYMin()
 			.toZMin()
 
-CSG clearenceFit = Right.toolOffset(-2.0)
-			//.movex(50);
+CSG clearenceFit = Right.toolOffset(-4.0)
 
 return[clearenceFit];
