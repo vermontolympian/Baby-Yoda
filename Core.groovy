@@ -20,7 +20,12 @@ CSG Cube = new Cube (50,30,70).toCSG()
 			.movex(18)
 			.movey(12.5)
 
+CSG Wrist = new Cylinder (8,8,15,(int)20).toCSG()
+			.toZMax()
+			.movey(15)
+			.movex(15)
+
 CSG Hand = Left.intersect(Cube)
 
 
-return[Hand];
+return[Hand,Wrist];
