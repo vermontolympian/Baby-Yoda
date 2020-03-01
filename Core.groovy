@@ -28,4 +28,4 @@ CSG Wrist = new Cylinder (8,8,15,(int)20).toCSG()
 CSG Hand = Left.intersect(Cube)
 
 
-return[Hand,Wrist];
+return[Hand,Cylinder];
