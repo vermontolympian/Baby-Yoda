@@ -54,6 +54,14 @@ CSG Bolt5 = new Cylinder (2.75,2.75,60,(int)8).toCSG()
 			.movey(-15)
 			.movez(-5)
 
+
+CSG Bolt6 = new Cylinder (2.75,2.75,60,(int)8).toCSG()
+			.rotx(90)
+			.movex(25)
+			.movex(-10)
+			.movey(-15)
+			.movez(10)
+
 CSG Pry1 = new Cube (15,4,20).toCSG()						//Create pry location 1
 			.movex(-27.5)
 			.movey(15)
@@ -255,7 +263,7 @@ CSG Wrist = new Cylinder (15,11,20,(int)30).toCSG()
 
 CSG Insert = Core.union(Wrist,Pin4)
 
-CSG Hand = Insert.difference(Bolt5)
+CSG Hand = Insert.difference(Bolt6)
 
 
 
