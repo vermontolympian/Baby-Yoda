@@ -217,18 +217,57 @@ CSG Tip18 = new Sphere(1).toCSG()
 			.movex(28.25)
 			.movez(2.5)
 
+CSG Tip19 = new Sphere(3).toCSG()
+			.toZMin()
+			.movey(15)
+			.movex(-6)
+			.movez(38)
+
+CSG Tip20 = new Sphere(1).toCSG()
+			.toZMin()
+			.movey(15)
+			.movez(40)
+
+CSG Tip21 = new Sphere(3).toCSG()
+			.toZMin()
+			.movey(15)
+			.movex(-5)
+			.movez(50)
+			
+CSG Tip22 = new Sphere(1).toCSG()
+			.toZMin()
+			.movey(15)
+			.movex(-0.25)
+			.movez(52)
+
+CSG Tip23 = new Sphere(3).toCSG()
+			.toZMin()
+			.movey(15)
+			.movex(-4)
+			.movez(65)
+
+CSG Tip24 = new Sphere(1).toCSG()
+			.toZMin()
+			.movey(15)
+			.movex(2)
+			.movez(67)
+
 CSG Chanel6 = CSG.hullAll([Tip7,Tip8])
 CSG Chanel7 = CSG.hullAll([Tip9,Tip10])
 CSG Chanel8 = CSG.hullAll([Tip11,Tip12])
 CSG Chanel9 = CSG.hullAll([Tip13,Tip14])
 CSG Chanel10 = CSG.hullAll([Tip15,Tip16])
 CSG Chanel11 = CSG.hullAll([Tip17,Tip18])
+CSG Chanel12 = CSG.hullAll([Tip19,Tip20])
+CSG Chanel13 = CSG.hullAll([Tip21,Tip22])
+CSG Chanel14 = CSG.hullAll([Tip23,Tip24])
 
 def stuff = [Cylinder,Left,Bolt1,Bolt2,Bolt3,Bolt4,Bolt5,
 		   Pry1,Pry2,Pin5,Pour1,Pour2,
 		   Chanel1,Chanel2,Chanel3,Chanel4,Chanel5,
 		   Chanel6,Chanel7,Chanel8,Chanel9,
-		   Chanel10,Chanel11]
+		   Chanel10,Chanel11,
+		   Chanel12,Chanel13,Chanel14]
 		   
 //CSG Palm = Cube.difference(stuff)							//Cut 'stuff' out of palm side of mold
 //			.rotx(-90)
@@ -242,29 +281,29 @@ CSG Back = Cube2.difference(stuff)							//Cut 'stuff' out of back side of mold
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-File Left_Core = ScriptingEngine.fileFromGit("https://github.com/vermontolympian/Baby-Yoda.git",
-"DownRes-LeftInsert-4mm.stl");					
-CSG Core = Vitamins.get(Left_Core)							//Get hand STL	
-			.rotz(125)
-			.rotx(10)
-			.toXMin()
-			.toYMin()
-			.toZMin()
-			.movex(2)
-			.movez(16)
-			.movey(2)
+//File Left_Core = ScriptingEngine.fileFromGit("https://github.com/vermontolympian/Baby-Yoda.git",
+//"DownRes-LeftInsert-4mm.stl");					
+//CSG Core = Vitamins.get(Left_Core)							//Get hand STL	
+//			.rotz(125)
+//			.rotx(10)
+//			.toXMin()
+//			.toYMin()
+//			.toZMin()
+//			.movex(2)
+//			.movez(16)
+//			.movey(2)
 
 
-CSG Wrist = new Cylinder (15,11,20,(int)30).toCSG()
-			.toZMax()
-			.movey(15)
-			.movex(15)
-			.movez(20)
+//CSG Wrist = new Cylinder (15,11,20,(int)30).toCSG()
+//			.toZMax()
+//			.movey(15)
+//			.movex(15)
+//			.movez(20)
 
-CSG Insert = Core.union(Wrist,Pin4)
+//CSG Insert = Core.union(Wrist,Pin4)
 
-CSG Hand = Insert.difference(Bolt6)
+//CSG Hand = Insert.difference(Bolt6)
 
 
 
-return [Hand,Back];
+return [Back];
