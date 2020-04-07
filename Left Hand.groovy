@@ -274,36 +274,87 @@ def stuff = [Cylinder,Left,Bolt1,Bolt2,Bolt3,Bolt4,Bolt5,
 //			.toZMin()
 //			.movey(-25)
 				
-CSG Back = Cube2.difference(stuff)							//Cut 'stuff' out of back side of mold
+//CSG Back = Cube2.difference(stuff)							//Cut 'stuff' out of back side of mold
 //			.rotx(90)
 //			.movey(50)
-			.toZMin()
+//			.toZMin()
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-//File Left_Core = ScriptingEngine.fileFromGit("https://github.com/vermontolympian/Baby-Yoda.git",
-//"DownRes-LeftInsert-4mm.stl");					
-//CSG Core = Vitamins.get(Left_Core)							//Get hand STL	
-//			.rotz(125)
-//			.rotx(10)
-//			.toXMin()
-//			.toYMin()
-//			.toZMin()
-//			.movex(2)
-//			.movez(16)
-//			.movey(2)
+File Left_Core = ScriptingEngine.fileFromGit("https://github.com/vermontolympian/Baby-Yoda.git",
+"DownRes-LeftInsert-4mm.stl");					
+CSG Core = Vitamins.get(Left_Core)							//Get hand STL	
+			.rotz(125)
+			.rotx(10)
+			.toXMin()
+			.toYMin()
+			.toZMin()
+			.movex(2)
+			.movez(16)
+			.movey(2)
+
+CSG Nub1 = new Sphere(1.5).toCSG()
+			.toZMin()
+			.movey(15)
+			.movex(15)
+			.movez(65)
+
+CSG Nub2 = new Sphere(4).toCSG()
+			.toZMin()
+			.movey(15)
+			.movex(7)
+			.movez(-3)
+
+CSG Nub3 = new Sphere(4).toCSG()
+			.toZMin()
+			.movey(15)
+			.movex(23)
+			.movez(-3)
+
+CSG Nub4 = new Sphere(1).toCSG()
+			.toZMin()
+			.movey(15)
+			.movex(26.5)
+			.movez(42)
+
+CSG Nub5 = new Sphere(2).toCSG()
+			.toZMin()
+			.movey(15)
+			.movex(18)
+			.movez(39)
+
+CSG Nub6 = new Sphere(1).toCSG()
+			.toZMin()
+			.movey(15)
+			.movex(3)
+			.movez(42)
+
+CSG Nub7 = new Sphere(2).toCSG()
+			.toZMin()
+			.movey(15)
+			.movex(11)
+			.movez(39)
 
 
-//CSG Wrist = new Cylinder (15,11,20,(int)30).toCSG()
-//			.toZMax()
-//			.movey(15)
-//			.movex(15)
-//			.movez(20)
+CSG Vent = CSG.hullAll([Nub1,Nub2])
 
-//CSG Insert = Core.union(Wrist,Pin4)
+CSG Vent2 = CSG.hullAll([Nub1,Nub3])
 
-//CSG Hand = Insert.difference(Bolt6)
+CSG Vent3 = CSG.hullAll([Nub4,Nub5])
+
+CSG Vent4 = CSG.hullAll([Nub6,Nub7])
 
 
+CSG Wrist = new Cylinder (15,11,20,(int)30).toCSG()
+			.toZMax()
+			.movey(15)
+			.movex(15)
+			.movez(20)
 
-return [Back];
+CSG Insert = Core.union(Wrist,Pin4)
+
+CSG Hand = Insert.difference(Bolt6,Vent,Vent2,Vent3,Vent4)
+
+
+
+return [Hand];
