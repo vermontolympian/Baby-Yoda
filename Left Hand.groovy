@@ -72,7 +72,7 @@ CSG Pry2 = new Cube (15,4,20).toCSG()						//Create pry location 2
 			.movey(15)
 			.movez(22)
 
-CSG Pin = new Cylinder (5,10,10).toCSG()
+CSG Pin = new Cylinder (5,10,12).toCSG()
 			.toZMin()
 			.movex(15)
 			.movez(-15)
@@ -83,7 +83,7 @@ CSG Pour1 = new Cylinder (12,4,10,(int)8).toCSG()
 			.movex(-10)
 			.movez(-15)
 
-CSG Pour2 = new Cylinder (15,4,12,(int)8).toCSG()
+CSG Pour2 = new Cylinder (15,4,14,(int)8).toCSG()
 			.toZMin()
 			.movey(15)
 			.movex(50)
