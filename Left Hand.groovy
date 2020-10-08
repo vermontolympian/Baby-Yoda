@@ -269,15 +269,15 @@ def stuff = [Cylinder,Left,Bolt1,Bolt2,Bolt3,Bolt4,Bolt5,
 		   Chanel10,Chanel11,
 		   Chanel12,Chanel13,Chanel14]
 		   
-//CSG Palm = Cube.difference(stuff)							//Cut 'stuff' out of palm side of mold
-//			.rotx(-90)
-//			.toZMin()
-//			.movey(-25)
+CSG Palm = Cube.difference(stuff)							//Cut 'stuff' out of palm side of mold
+			.rotx(-90)
+			.toZMin()
+			.movey(-25)
 				
-//CSG Back = Cube2.difference(stuff)							//Cut 'stuff' out of back side of mold
-//			.rotx(90)
-//			.movey(50)
-//			.toZMin()
+CSG Back = Cube2.difference(stuff)							//Cut 'stuff' out of back side of mold
+			.rotx(90)
+			.movey(50)
+			.toZMin()
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -357,4 +357,4 @@ CSG Hand = Insert.difference(Bolt6,Vent,Vent2,Vent3,Vent4)
 
 
 
-return [Hand];
+return [Hand,Back,Palm];
