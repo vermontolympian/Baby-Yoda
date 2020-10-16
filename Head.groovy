@@ -19,4 +19,14 @@ CSG Cube2 = new Cube(200,100,160).toCSG()
 			.toZMin()
 			.movex(-20)
 
-return[Head,Cube1,Cube2];
+CSG Back = Cube1.difference(Head)
+			.rotx(-90)
+			.toZMin()
+			.movey(20)
+
+//CSG Front = Cube2.difference(Head)
+//			.rotx(90)
+//			.toZMin()
+//			.movey(-20)
+
+return[Back];
