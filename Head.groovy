@@ -1,3 +1,9 @@
+import com.neuronrobotics.bowlerstudio.scripting.ScriptingEngine
+import com.neuronrobotics.bowlerstudio.vitamins.Vitamins
+
+import eu.mihosoft.vrl.v3d.CSG
+import eu.mihosoft.vrl.v3d.Cube
+
 File Head_stl = ScriptingEngine.fileFromGit("https://github.com/vermontolympian/Baby-Yoda.git",
 "Down-Res-Head-10k.stl");	
 CSG Head = Vitamins.get(Head_stl)

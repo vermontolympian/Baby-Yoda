@@ -1,3 +1,9 @@
+import com.neuronrobotics.bowlerstudio.scripting.ScriptingEngine
+import com.neuronrobotics.bowlerstudio.vitamins.Vitamins
+
+import eu.mihosoft.vrl.v3d.CSG
+import eu.mihosoft.vrl.v3d.*
+
 File Right_Hand = ScriptingEngine.fileFromGit("https://github.com/vermontolympian/Baby-Yoda.git",
 "DownRes-Right-Hand.stl");								
 CSG Right  = Vitamins.get(Right_Hand)						//Get hand STL
