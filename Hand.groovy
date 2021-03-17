@@ -22,7 +22,9 @@ CSG Cube2 = new Cube(70,30,100).toCSG()						//Create back mold piece
 			.toYMin()
 			.movey(Cube.getMaxY())
 
-CSG Cylinder = new Cylinder (15,11,11,(int)30).toCSG()			//Create pouring slot geometry
+CSG Cylinder = (CSG)(ScriptingEngine.gitScriptRun(
+            "https://github.com/vermontolympian/Baby-Yoda.git", // git location of the library
+            "handPlug.groovy" ,null))
 			.toZMax()
 			.movey(20)
 			.movex(18)
