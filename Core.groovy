@@ -1,3 +1,10 @@
+import eu.mihosoft.vrl.v3d.CSG
+
+import com.neuronrobotics.bowlerstudio.scripting.ScriptingEngine
+import com.neuronrobotics.bowlerstudio.vitamins.Vitamins
+
+import eu.mihosoft.vrl.v3d.*
+
 File Left_Hand = ScriptingEngine.fileFromGit("https://github.com/vermontolympian/Baby-Yoda.git",
 "DownRes-LeftInsert-4mm.stl");					
 CSG Left = Vitamins.get(Left_Hand)							//Get hand STL	
@@ -9,7 +16,9 @@ CSG Left = Vitamins.get(Left_Hand)							//Get hand STL
 			.movex(2)
 			.movez(-4)
 
-CSG Cylinder = new Cylinder (15,11,20,(int)30).toCSG()			//Create pouring slot geometry
+CSG Cylinder = (CSG)(ScriptingEngine.gitScriptRun(
+            "https://github.com/vermontolympian/Baby-Yoda.git", // git location of the library
+            "handPlug.groovy" ,null))
 			.toZMax()
 			.movey(15)
 			.movex(15)
